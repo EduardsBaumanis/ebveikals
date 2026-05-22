@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darbs – Keramikas darbnīca</title>
+  <meta name="description" content="Unikāls keramikas darbs ar stāstu par māla izcelsmi, glazēšanas stilu un tēmu." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Pāriet uz saturu</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Keramikas <span>darbnīca</span></a>
+      <nav class="main-nav" aria-label="Galvenā navigācija">
+        <a href="shop.html">Veikals</a>
+        <a href="index.html#mala-karte">Māla karte</a>
+        <a href="legal.html">Informācija</a>
+        <a class="cart-link" href="cart.html">Grozs
+          <span id="cart-badge" class="cart-badge" hidden></span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <p><a href="shop.html">← Atpakaļ uz veikalu</a></p>
+      <div id="product-status" aria-live="polite"></div>
+      <div id="product-detail"></div>
+      <section id="related-products" class="section"></section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="index.html">Sākums</a> · <a href="legal.html">Informācija</a></p>
+      <p>Šī vietne neizmanto analītikas vai izsekošanas sīkdatnes.</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script type="module" src="js/product.js"></script>
+</body>
+</html>

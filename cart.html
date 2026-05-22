@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grozs un apmaksa – Keramikas darbnīca</title>
+  <meta name="description" content="Jūsu izvēlētie keramikas darbi, piegādes informācija un droša apmaksa." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Pāriet uz saturu</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Keramikas <span>darbnīca</span></a>
+      <nav class="main-nav" aria-label="Galvenā navigācija">
+        <a href="shop.html">Veikals</a>
+        <a href="index.html#mala-karte">Māla karte</a>
+        <a href="legal.html">Informācija</a>
+        <a class="cart-link" href="cart.html">Grozs
+          <span id="cart-badge" class="cart-badge" hidden></span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <h1 class="section-title">Grozs</h1>
+      <p class="section-intro">Lai pirktu, nav jāveido konts. Grozs tiek glabāts tikai jūsu pārlūkā.</p>
+
+      <div class="checkout-layout">
+        <!-- Cart contents -->
+        <section aria-label="Groza saturs">
+          <div id="cart-container"></div>
+          <div class="cart-summary">
+            <p class="cart-total">Kopā: <span id="cart-total">0,00 €</span></p>
+          </div>
+        </section>
+
+        <!-- Checkout form -->
+        <section class="checkout-form" aria-label="Pasūtījuma noformēšana">
+          <h2>Piegāde un kontakti</h2>
+          <form id="checkout-form" novalidate>
+            <div class="form-field">
+              <label for="customer_name">Vārds un uzvārds <span class="required-star">*</span></label>
+              <input id="customer_name" name="customer_name" required autocomplete="name" />
+            </div>
+
+            <div class="form-field">
+              <label for="customer_email">E-pasts <span class="required-star">*</span></label>
+              <input id="customer_email" name="customer_email" type="email" required autocomplete="email" />
+            </div>
+
+            <div class="form-field">
+              <label for="customer_phone">Telefons (neobligāts)</label>
+              <input id="customer_phone" name="customer_phone" type="tel" autocomplete="tel" />
+            </div>
+
+            <div class="form-field">
+              <label for="parcel-search">Meklēt pakomātu</label>
+              <input id="parcel-search" type="search" placeholder="Pilsēta vai adrese" />
+            </div>
+
+            <div class="form-field">
+              <label for="parcel_machine_id">Latvijas Pasta pakomāts <span class="required-star">*</span></label>
+              <select id="parcel_machine_id" name="parcel_machine_id" required>
+                <option value="">— Izvēlieties pakomātu —</option>
+              </select>
+              <p class="hint">Saraksts ir demonstrācijas paraugs. Pilnu sarakstu uztur veikala administrators.</p>
+            </div>
+
+            <div class="form-field">
+              <label for="customer_comment">Komentārs pārdevējam (neobligāts)</label>
+              <textarea id="customer_comment" name="customer_comment" rows="3"></textarea>
+            </div>
+
+            <div id="checkout-status" aria-live="polite"></div>
+
+            <button type="submit" class="btn btn-primary">Doties uz apmaksu (Klix)</button>
+            <p class="hint">Apmaksa notiek drošā Klix maksājumu vidē. Mēs neredzam jūsu kartes datus.</p>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="index.html">Sākums</a> · <a href="legal.html">Informācija</a></p>
+      <p>Šī vietne izmanto tikai tehniski nepieciešamo localStorage groza glabāšanai. Nav izsekošanas sīkdatņu.</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script type="module">
+    import { renderCart, updateCartBadge } from "./js/cart.js";
+    import { initCheckout, loadParcelMachines } from "./js/checkout.js";
+    import { formatPrice } from "./js/utils.js";
+    import { cartTotal } from "./js/cart.js";
+
+    updateCartBadge();
+
+    const cartContainer = document.getElementById("cart-container");
+    const totalEl = document.getElementById("cart-total");
+
+    function refreshTotal() {
+      totalEl.textContent = formatPrice(cartTotal());
+      updateCartBadge();
+    }
+
+    renderCart(cartContainer, refreshTotal);
+
+    loadParcelMachines(
+      document.getElementById("parcel_machine_id"),
+      document.getElementById("parcel-search")
+    );
+
+    initCheckout(
+      document.getElementById("checkout-form"),
+      document.getElementById("checkout-status")
+    );
+  </script>
+</body>
+</html>

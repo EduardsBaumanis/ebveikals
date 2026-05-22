@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrācija – Keramikas darbnīca</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <!-- LOGIN -->
+  <section id="admin-login" hidden>
+    <div class="login-card">
+      <h1>Administrācija</h1>
+      <p class="hint">Pieslēdzieties ar savu administratora e-pastu un paroli.</p>
+      <form id="login-form">
+        <div class="form-field">
+          <label for="login-email">E-pasts</label>
+          <input id="login-email" name="email" type="email" required autocomplete="username" />
+        </div>
+        <div class="form-field">
+          <label for="login-password">Parole</label>
+          <input id="login-password" name="password" type="password" required autocomplete="current-password" />
+        </div>
+        <div id="login-status" aria-live="polite"></div>
+        <button type="submit" class="btn btn-primary">Pieslēgties</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ADMIN PANEL -->
+  <section id="admin-panel" class="admin-wrap" hidden>
+    <div class="admin-top">
+      <h1>Keramikas darbnīca — administrācija</h1>
+      <div>
+        <span class="admin-user" id="admin-email"></span>
+        <button id="logout-btn" class="btn btn-small btn-secondary">Iziet</button>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard"></div>
+
+    <!-- Products -->
+    <section class="admin-section">
+      <div class="admin-section-head">
+        <h2>Darbi</h2>
+        <button id="new-product-btn" class="btn btn-primary btn-small">+ Jauns darbs</button>
+      </div>
+      <div class="table-scroll">
+        <table class="admin-table">
+          <thead>
+            <tr><th>Nosaukums</th><th>Cena</th><th>Atlikums</th><th>Statuss</th><th>Darbības</th></tr>
+          </thead>
+          <tbody id="products-tbody"></tbody>
+        </table>
+      </div>
+      <div id="product-editor" class="product-editor" hidden></div>
+    </section>
+
+    <!-- Orders -->
+    <section class="admin-section">
+      <h2>Pasūtījumi</h2>
+      <div class="orders-toolbar">
+        <label>Filtrēt pēc statusa:
+          <select id="orders-filter">
+            <option value="">Visi</option>
+            <option value="pending_payment">Gaida apmaksu</option>
+            <option value="paid">Apmaksāts</option>
+            <option value="cancelled">Atcelts</option>
+            <option value="failed">Neizdevās</option>
+            <option value="refunded">Atmaksāts</option>
+          </select>
+        </label>
+      </div>
+      <div class="table-scroll">
+        <table class="admin-table">
+          <thead>
+            <tr><th>Numurs</th><th>Klients</th><th>Summa</th><th>Statuss</th><th>Datums</th><th></th></tr>
+          </thead>
+          <tbody id="orders-tbody"></tbody>
+        </table>
+      </div>
+      <div id="order-detail" class="order-detail" hidden></div>
+    </section>
+
+    <!-- Reference data -->
+    <section class="admin-section">
+      <h2>Kategorijas un saraksti</h2>
+      <p class="hint">Pārvaldiet produktu veidus, tēmas, apdedzināšanas stilus, māla vietas un pakomātus.</p>
+      <div id="reference-manager"></div>
+    </section>
+  </section>
+
+  <script src="js/config.js"></script>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
