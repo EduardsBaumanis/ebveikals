@@ -1,0 +1,15 @@
+# Local Supabase config with your project URL + anon key.
+# Copy js/config.example.js to js/config.js and never commit it.
+js/config.js
+
+# Never commit secrets or environment files.
+.env
+.env.*
+.dev.vars
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
+.idea/

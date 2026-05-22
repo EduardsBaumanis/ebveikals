@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keramikas darbnīca – Unikāli māla darbi no Latvijas</title>
+  <meta name="description" content="Unikāli, ierobežota skaita keramikas darbi no Latvijas māla. Māla izcelsmes karte, glazēšanas stili un darbu tēmas." />
+  <!-- Open Graph tags for nicer link previews -->
+  <meta property="og:title" content="Keramikas darbnīca – Unikāli māla darbi no Latvijas" />
+  <meta property="og:description" content="Unikāli, ierobežota skaita keramikas darbi no Latvijas māla." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Pāriet uz saturu</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Keramikas <span>darbnīca</span></a>
+      <nav class="main-nav" aria-label="Galvenā navigācija">
+        <a href="shop.html">Veikals</a>
+        <a href="index.html#mala-karte">Māla karte</a>
+        <a href="legal.html">Informācija</a>
+        <a class="cart-link" href="cart.html">Grozs
+          <span id="cart-badge" class="cart-badge" hidden></span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="tagline">Unikāli keramikas darbi</p>
+        <h1>Māls, uguns un Latvijas stāsti</h1>
+        <p>
+          Katrs darbs ir mākslas projekts — izgatavots ierobežotā skaitā no
+          māla, kas vākts dažādās Latvijas vietās. Kad darbi pārdoti, tie
+          vairs neatkārtojas.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="shop.html">Apskatīt darbus</a>
+          <a class="btn btn-secondary" href="index.html#mala-karte">Māla izcelsmes karte</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="ornament" aria-hidden="true"></div></div>
+
+    <!-- Intro -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Par darbnīcu</h2>
+        <p class="section-intro">
+          Mēs veidojam keramiku, kas saistīta ar vietu, zemi un latviešu
+          kultūras zīmēm. Katram darbam ir savs stāsts — no māla izcelsmes
+          līdz apdedzināšanas veidam.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured products -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Izceltie darbi</h2>
+        <p class="section-intro">Daži no šobrīd pieejamajiem darbiem.</p>
+        <div id="featured-grid" class="product-grid"></div>
+        <p class="mt-2"><a class="btn btn-secondary" href="shop.html">Visi darbi veikalā</a></p>
+      </div>
+    </section>
+
+    <!-- Storytelling sections -->
+    <section class="section">
+      <div class="container">
+        <div class="story-grid">
+          <article class="story-card">
+            <h3>Māls no Latvijas vietām</h3>
+            <p>Katrs darbs sākas ar mālu, kas vākts noteiktā Latvijas vietā.
+               Apskatiet māla izcelsmes karti zemāk.</p>
+          </article>
+          <article class="story-card">
+            <h3>Glazūras un apdedzinājumi</h3>
+            <p>No matētas melnas glazūras līdz eksperimentāliem
+               apdedzinājumiem — katrs paņēmiens dod savu rezultātu.</p>
+            <p><a href="shop.html">Apskatīt pēc stila →</a></p>
+          </article>
+          <article class="story-card">
+            <h3>Tēmas darbos</h3>
+            <p>Mežs, upe, senās zīmes, zeme un uguns — tēmas, kas iedvesmo
+               katru kolekciju.</p>
+            <p><a href="shop.html">Apskatīt pēc tēmas →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><div class="ornament" aria-hidden="true"></div></div>
+
+    <!-- Clay origin map -->
+    <section class="section" id="mala-karte">
+      <div class="container">
+        <h2 class="section-title">Māla izcelsmes karte</h2>
+        <p class="section-intro">
+          Mākslinieciska Latvijas karte ar vietām, kur vākts māls. Izvēlieties
+          punktu, lai uzzinātu vietas stāstu. (Karte ir aptuvena un dekoratīva.)
+        </p>
+        <div id="clay-map"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Keramikas darbnīca</strong>
+        <p>Unikāli māla darbi no Latvijas.</p>
+      </div>
+      <div>
+        <p><a href="shop.html">Veikals</a></p>
+        <p><a href="legal.html">Pirkuma noteikumi un informācija</a></p>
+      </div>
+      <div>
+        <p>E-pasts: <a href="mailto:eduards.baumanis0@gmail.com">eduards.baumanis0@gmail.com</a></p>
+        <p>Šī vietne neizmanto analītikas vai izsekošanas sīkdatnes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- config.js (your local copy of config.example.js) must load first -->
+  <script src="js/config.js"></script>
+  <script type="module">
+    import { fetchFeaturedProducts } from "./js/products.js";
+    import { formatPrice, escapeHtml, availabilityLabel } from "./js/utils.js";
+    import { updateCartBadge } from "./js/cart.js";
+    import { initMap } from "./js/map.js";
+
+    updateCartBadge();
+
+    // Render featured products on the homepage.
+    (async () => {
+      const grid = document.getElementById("featured-grid");
+      try {
+        const products = await fetchFeaturedProducts(3);
+        if (products.length === 0) {
+          grid.innerHTML = "<p>Pagaidām nav pieejamu darbu.</p>";
+          return;
+        }
+        grid.innerHTML = products.map((p) => `
+          <article class="product-card">
+            <a class="product-card-link" href="product.html?id=${encodeURIComponent(p.id)}">
+              <div class="product-card-image-wrap">
+                <img class="product-card-image" src="${escapeHtml(p.mainImage.url)}"
+                     alt="${escapeHtml(p.mainImage.alt)}" loading="lazy" />
+              </div>
+              <h3 class="product-card-title">${escapeHtml(p.title_lv)}</h3>
+            </a>
+            <p class="product-card-price">${formatPrice(p.price_eur)}</p>
+            <p class="product-card-availability">${escapeHtml(availabilityLabel(p))}</p>
+            <a class="btn btn-secondary product-card-cta" href="product.html?id=${encodeURIComponent(p.id)}">Apskatīt</a>
+          </article>
+        `).join("");
+      } catch (e) {
+        console.error(e);
+        grid.innerHTML = "<p>Neizdevās ielādēt darbus.</p>";
+      }
+    })();
+
+    initMap("#clay-map");
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veikals – Keramikas darbnīca</title>
+  <meta name="description" content="Pārlūkojiet unikālos keramikas darbus. Filtrējiet pēc veida, tēmas, stila, māla izcelsmes un pieejamības." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Pāriet uz saturu</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Keramikas <span>darbnīca</span></a>
+      <nav class="main-nav" aria-label="Galvenā navigācija">
+        <a href="shop.html">Veikals</a>
+        <a href="index.html#mala-karte">Māla karte</a>
+        <a href="legal.html">Informācija</a>
+        <a class="cart-link" href="cart.html">Grozs
+          <span id="cart-badge" class="cart-badge" hidden></span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <h1 class="section-title">Veikals</h1>
+      <p class="section-intro">Visi pieejamie un pārdotie darbi.</p>
+
+      <div class="shop-layout">
+        <!-- Filters -->
+        <aside class="filters" aria-label="Filtri">
+          <h2>Filtri</h2>
+
+          <label class="filter-field">
+            <span>Meklēt</span>
+            <input type="search" id="filter-search" placeholder="Nosaukums vai apraksts" />
+          </label>
+
+          <label class="filter-field">
+            <span>Veids</span>
+            <select id="filter-type"><option value="">Visi veidi</option></select>
+          </label>
+
+          <label class="filter-field">
+            <span>Tēma</span>
+            <select id="filter-theme"><option value="">Visas tēmas</option></select>
+          </label>
+
+          <label class="filter-field">
+            <span>Glazēšanas / apdedzināšanas stils</span>
+            <select id="filter-firing"><option value="">Visi apdedzinājumi</option></select>
+          </label>
+
+          <label class="filter-field">
+            <span>Māla izcelsme</span>
+            <select id="filter-clay"><option value="">Visas māla vietas</option></select>
+          </label>
+
+          <label class="filter-field">
+            <span>Pieejamība</span>
+            <select id="filter-availability">
+              <option value="">Visi</option>
+              <option value="available">Pieejams</option>
+              <option value="sold_out">Pārdots</option>
+            </select>
+          </label>
+
+          <label class="filter-field">
+            <span>Kārtot</span>
+            <select id="filter-sort">
+              <option value="newest">Jaunākie</option>
+              <option value="price_asc">Cena: augoši</option>
+              <option value="price_desc">Cena: dilstoši</option>
+              <option value="quantity_left">Atlikušais daudzums</option>
+            </select>
+          </label>
+        </aside>
+
+        <!-- Product grid -->
+        <section aria-label="Darbu saraksts">
+          <div id="shop-status" aria-live="polite"></div>
+          <div id="product-grid" class="product-grid"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="index.html">Sākums</a> · <a href="legal.html">Informācija</a></p>
+      <p>Šī vietne neizmanto analītikas vai izsekošanas sīkdatnes.</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script type="module" src="js/shop.js"></script>
+</body>
+</html>
