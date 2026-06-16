@@ -24,7 +24,15 @@ const relatedBox = document.getElementById("related-products");
 // ------------------------------------------------------------
 function galleryHtml(product) {
   const main = product.mainImage;
-  const thumbs = product.images.map((img, index) => `
+  if (!main || !main.url) {
+    return `
+      <div class="gallery">
+        <div class="gallery-placeholder">[ photograph ]</div>
+      </div>
+    `;
+  }
+
+  const thumbs = product.images.filter((img) => img.url).map((img, index) => `
     <button class="gallery-thumb ${index === 0 ? "is-active" : ""}"
             data-url="${escapeHtml(img.url)}"
             data-alt="${escapeHtml(img.alt)}"
@@ -56,7 +64,7 @@ function detailRow(label, value) {
 // renderProduct(product)
 // ------------------------------------------------------------
 function renderProduct(product) {
-  document.title = product.title_lv + " – Keramikas darbnīca";
+  document.title = product.title_lv + " – ebKERAMIKA";
 
   const soldOut = isSoldOut(product);
   const type = product.product_types ? product.product_types.name_lv : "";
@@ -140,7 +148,9 @@ function renderRelated(products) {
   if (!relatedBox || products.length === 0) return;
   const cards = products.map((p) => `
     <a class="related-card" href="product.html?id=${encodeURIComponent(p.id)}">
-      <img src="${escapeHtml(p.mainImage.url)}" alt="${escapeHtml(p.mainImage.alt)}" loading="lazy" />
+      ${p.mainImage && p.mainImage.url
+        ? `<img src="${escapeHtml(p.mainImage.url)}" alt="${escapeHtml(p.mainImage.alt)}" loading="lazy" />`
+        : '<span class="related-placeholder">[ photograph ]</span>'}
       <span class="related-title">${escapeHtml(p.title_lv)}</span>
       <span class="related-price">${formatPrice(p.price_eur)}</span>
     </a>

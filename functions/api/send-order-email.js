@@ -51,7 +51,7 @@ ${pm}
 Ja rodas jautājumi, rakstiet mums: ${ownerEmail}
 
 Ar cieņu,
-Keramikas darbnīca`;
+ebKERAMIKA`;
 
   return { subject, text };
 }

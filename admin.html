@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Administrācija – Keramikas darbnīca</title>
+  <title>Administrācija – ebKERAMIKA</title>
   <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Badeen+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/admin.css" />
 </head>
@@ -12,7 +15,7 @@
   <!-- LOGIN -->
   <section id="admin-login" hidden>
     <div class="login-card">
-      <h1>Administrācija</h1>
+      <h1 class="overprint-text" data-text="Administrācija">Administrācija</h1>
       <p class="hint">Pieslēdzieties ar savu administratora e-pastu un paroli.</p>
       <form id="login-form">
         <div class="form-field">
@@ -32,7 +35,7 @@
   <!-- ADMIN PANEL -->
   <section id="admin-panel" class="admin-wrap" hidden>
     <div class="admin-top">
-      <h1>Keramikas darbnīca — administrācija</h1>
+      <h1><span class="overprint-text" data-text="ebKERAMIKA">ebKERAMIKA</span> — administrācija</h1>
       <div>
         <span class="admin-user" id="admin-email"></span>
         <button id="logout-btn" class="btn btn-small btn-secondary">Iziet</button>
@@ -95,5 +98,6 @@
 
   <script src="js/config.js"></script>
   <script type="module" src="js/admin.js"></script>
+
 </body>
 </html>

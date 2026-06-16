@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darbs – Keramikas darbnīca</title>
+  <title>Darbs – ebKERAMIKA</title>
   <meta name="description" content="Unikāls keramikas darbs ar stāstu par māla izcelsmi, glazēšanas stilu un tēmu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Badeen+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -12,21 +15,21 @@
 
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="index.html">Keramikas <span>darbnīca</span></a>
+      <a class="brand overprint-text" data-text="ebKERAMIKA" href="index.html">ebKERAMIKA</a>
       <nav class="main-nav" aria-label="Galvenā navigācija">
         <a href="shop.html">Veikals</a>
-        <a href="index.html#mala-karte">Māla karte</a>
-        <a href="legal.html">Informācija</a>
-        <a class="cart-link" href="cart.html">Grozs
-          <span id="cart-badge" class="cart-badge" hidden></span>
-        </a>
+        <a href="index.html#mala-karte">Karte</a>
+        <a href="index.html#stili">Stili</a>
+        <a href="index.html#temas">Tēmas</a>
+        <a href="index.html#stasts">Stāsts</a>
+        <a class="cart-link" href="cart.html">Grozs</a>
       </nav>
     </div>
   </header>
 
   <main id="main" class="section">
     <div class="container">
-      <p><a href="shop.html">← Atpakaļ uz veikalu</a></p>
+      <a class="back-link" href="shop.html">← Atpakaļ uz veikalu</a>
       <div id="product-status" aria-live="polite"></div>
       <div id="product-detail"></div>
       <section id="related-products" class="section"></section>
@@ -36,7 +39,7 @@
   <footer class="site-footer">
     <div class="container">
       <p><a href="index.html">Sākums</a> · <a href="legal.html">Informācija</a></p>
-      <p>Šī vietne neizmanto analītikas vai izsekošanas sīkdatnes.</p>
+      <p>Vietne neizmanto analītikas vai izsekošanas sīkdatnes.</p>
     </div>
   </footer>
 

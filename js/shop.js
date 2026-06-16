@@ -52,13 +52,16 @@ function productCard(product) {
   const soldOut = isSoldOut(product);
   const typeName = product.product_types ? product.product_types.name_lv : "";
   const themeName = product.themes ? product.themes.name_lv : "";
+  const image = product.mainImage && product.mainImage.url
+    ? `<img class="product-card-image" src="${escapeHtml(product.mainImage.url)}"
+               alt="${escapeHtml(product.mainImage.alt)}" loading="lazy" />`
+    : '<div class="product-image-placeholder">[ photograph ]</div>';
 
   return `
     <article class="product-card ${soldOut ? "is-sold-out" : ""}">
       <a class="product-card-link" href="product.html?id=${encodeURIComponent(product.id)}">
         <div class="product-card-image-wrap">
-          <img class="product-card-image" src="${escapeHtml(product.mainImage.url)}"
-               alt="${escapeHtml(product.mainImage.alt)}" loading="lazy" />
+          ${image}
           ${soldOut ? '<span class="badge badge-sold">Pārdots</span>' : ""}
         </div>
         <h3 class="product-card-title">${escapeHtml(product.title_lv)}</h3>

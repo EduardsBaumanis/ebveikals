@@ -127,10 +127,15 @@ export function renderCart(container, onChange) {
     return;
   }
 
-  const rows = items.map((item) => `
+  const rows = items.map((item) => {
+    const image = item.imageUrl
+      ? `<img class="cart-item-image" src="${escapeHtml(item.imageUrl)}"
+           alt="${escapeHtml(item.title)}" loading="lazy" />`
+      : '<div class="cart-item-image cart-item-placeholder" aria-hidden="true">✳</div>';
+
+    return `
     <li class="cart-item" data-id="${escapeHtml(item.id)}">
-      <img class="cart-item-image" src="${escapeHtml(item.imageUrl)}"
-           alt="${escapeHtml(item.title)}" loading="lazy" />
+      ${image}
       <div class="cart-item-info">
         <h3 class="cart-item-title">${escapeHtml(item.title)}</h3>
         <p class="cart-item-price">${formatPrice(item.price)}</p>
@@ -146,7 +151,8 @@ export function renderCart(container, onChange) {
       <button class="remove-btn" data-action="remove"
               aria-label="Noņemt no groza">Noņemt</button>
     </li>
-  `).join("");
+  `;
+  }).join("");
 
   container.innerHTML = '<ul class="cart-list">' + rows + "</ul>";
 

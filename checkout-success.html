@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paldies par pasūtījumu – Keramikas darbnīca</title>
+  <title>Paldies par pasūtījumu – ebKERAMIKA</title>
   <meta name="description" content="Jūsu pasūtījums ir saņemts. Apstiprinājums nosūtīts uz e-pastu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Badeen+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -12,29 +15,29 @@
 
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="index.html">Keramikas <span>darbnīca</span></a>
+      <a class="brand overprint-text" data-text="ebKERAMIKA" href="index.html">ebKERAMIKA</a>
       <nav class="main-nav" aria-label="Galvenā navigācija">
         <a href="shop.html">Veikals</a>
-        <a href="index.html#mala-karte">Māla karte</a>
-        <a href="legal.html">Informācija</a>
-        <a class="cart-link" href="cart.html">Grozs
-          <span id="cart-badge" class="cart-badge" hidden></span>
-        </a>
+        <a href="index.html#mala-karte">Karte</a>
+        <a href="index.html#stili">Stili</a>
+        <a href="index.html#temas">Tēmas</a>
+        <a href="index.html#stasts">Stāsts</a>
+        <a class="cart-link" href="cart.html">Grozs</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <div class="success-box">
-      <h1>Paldies par pasūtījumu!</h1>
+      <p class="eyebrow">Pasūtījums saņemts</p>
+      <h1>Paldies!</h1>
       <p id="order-number"></p>
       <p>
         Mēs esam saņēmuši jūsu pasūtījumu. Apstiprinājums tiks nosūtīts uz
-        jūsu norādīto e-pastu, tiklīdz maksājums būs apstiprināts.
+        norādīto e-pastu, tiklīdz maksājums būs apstiprināts.
       </p>
       <p id="pending-note" class="hint">
-        Ja maksājuma statuss vēl tiek apstiprināts, e-pasts var pienākt
-        dažu minūšu laikā. Paldies par pacietību!
+        Ja maksājuma statuss vēl tiek apstiprināts, e-pasts var pienākt dažu minūšu laikā.
       </p>
       <p class="mt-2"><a class="btn btn-primary" href="shop.html">Atgriezties veikalā</a></p>
     </div>
@@ -53,8 +56,6 @@
 
     updateCartBadge();
 
-    // Show the order number if Klix redirected back with ?order=...
-    // Fall back to the value we stored before redirecting.
     const fromUrl = getQueryParam("order");
     const fromSession = sessionStorage.getItem("last_order_id");
     const numberEl = document.getElementById("order-number");
