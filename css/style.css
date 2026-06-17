@@ -207,7 +207,7 @@ img { display: block; max-width: 100%; }
 
 .brand {
   flex: 0 0 auto;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1;
@@ -464,11 +464,23 @@ textarea:focus-visible,
   fill: currentColor;
 }
 
+.legend-mark-perkonkrusts .perkonkrusts-line path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 8;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
 .legend-mark-maras-krusts svg,
-.legend-mark-dievs svg,
-.legend-mark-perkonkrusts svg {
+.legend-mark-dievs svg {
   width: 34px;
   height: 34px;
+}
+
+.legend-mark-perkonkrusts svg {
+  width: 42px;
+  height: 42px;
 }
 
 .legend-item:nth-child(odd) .legend-mark { color: var(--clay); }
