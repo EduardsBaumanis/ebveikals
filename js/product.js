@@ -64,7 +64,7 @@ function detailRow(label, value) {
 // renderProduct(product)
 // ------------------------------------------------------------
 function renderProduct(product) {
-  document.title = product.title_lv + " – ebKERAMIKA";
+  document.title = product.title_lv + " – ebKeramika";
 
   const soldOut = isSoldOut(product);
   const type = product.product_types ? product.product_types.name_lv : "";
