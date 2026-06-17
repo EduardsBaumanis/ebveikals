@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ebKeramika</title>
-  <meta name="description" content="Ierobežota skaita keramikas darbi no Latvijas māla. Māla izcelsmes karte, glazēšanas stili un latviskas zīmes." />
-  <meta property="og:title" content="ebKERAMIKA – Unikāli māla darbi no Latvijas" />
-  <meta property="og:description" content="Ierobežota skaita keramika no Latvijas māla." />
+  <title>ebKeramika | Roku darbs keramika no Latvijas māla</title>
+  <meta name="description" content="Roku darbs keramika no Latvijas māla: trauki, dekoratīvi priekšmeti un mazās sērijas ar norādītu māla izcelsmi, glazūru un apdedzinājumu." />
+  <meta property="og:title" content="ebKERAMIKA – Roku darbs keramika no Latvijas māla" />
+  <meta property="og:description" content="Keramikas darbi mazās sērijās ar norādītu māla izcelsmi, glazūru un apdedzinājumu." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,8 +80,9 @@
             <em>uguns un māls.</em>
           </h1>
           <p>
-            Katrs darbs izgatavots ierobežotā skaitā no māla, kas vākts noteiktā Latvijas vietā.
-            Zīmes, glazūras un apdedzinājums atstāj savu nospiedumu kā risogrāfijas krāsa uz papīra.
+            Roku darbs keramika no Latvijas māla: trauki, dekoratīvi priekšmeti un mazās sērijas
+            ar norādītu māla izcelsmi, glazūru un apdedzinājumu. Katrs darbs top ierobežotā
+            skaitā Eduarda Baumaņa darbnīcā.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="shop.html">Apskatīt darbus →</a>
@@ -124,11 +125,12 @@
             <div class="legend-item">
               <span class="legend-mark legend-mark-perkonkrusts" aria-hidden="true">
                 <svg viewBox="0 0 100 100" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                  <g class="perkonkrusts-line" transform="rotate(45 50 50)">
-                    <path d="M50 50V14H74" />
-                    <path d="M50 50H86V74" />
-                    <path d="M50 50V86H26" />
-                    <path d="M50 50H14V26" />
+                  <g class="perkonkrusts-line" transform="rotate(-45 50 50)">
+                    <path d="M50 50H25V28H13" />
+                    <path d="M50 50V25H72V13" />
+                    <path d="M50 50H75V72H87" />
+                    <path d="M50 50V75H28V87" />
+                    <path class="perkonkrusts-ghost" d="M50 50H25V28H13M50 50V25H72V13M50 50H75V72H87M50 50V75H28V87" />
                   </g>
                 </svg>
               </span>
@@ -216,8 +218,8 @@
         <p class="eyebrow">Māla arhīvs</p>
         <h2 class="section-title overprint-text" data-text="Karte">Karte</h2>
         <p class="section-intro">
-          Mākslinieciska Latvijas karte ar vietām, kur vākts māls. Izvēlieties punktu,
-          lai atvērtu vietas stāstu un atrastu darbus no tās pašas zemes.
+          Google Maps pamatkarte ar 50 CSV māla testēšanas punktiem visā Latvijā.
+          Atveriet punktu, lai redzētu ģeoloģisko pamatojumu, testēšanas mērķi un piekļuves piezīmes.
         </p>
         <div id="clay-map"></div>
       </div>
@@ -243,16 +245,17 @@
 
   <script src="js/config.js"></script>
   <script type="module">
-    import { fetchFeaturedProducts } from "./js/products.js";
     import { formatPrice, escapeHtml, availabilityLabel } from "./js/utils.js";
     import { updateCartBadge } from "./js/cart.js";
     import { initMap } from "./js/map.js";
 
     updateCartBadge();
+    initMap("#clay-map");
 
     (async () => {
       const grid = document.getElementById("featured-grid");
       try {
+        const { fetchFeaturedProducts } = await import("./js/products.js");
         const products = await fetchFeaturedProducts(3);
         if (products.length === 0) {
           grid.innerHTML = '<p class="section-intro">Pagaidām nav pieejamu darbu.</p>';
@@ -284,8 +287,6 @@
         grid.innerHTML = '<p class="section-intro">Neizdevās ielādēt darbus.</p>';
       }
     })();
-
-    initMap("#clay-map");
   </script>
   <script src="js/sun-scroll.js"></script>
 </body>

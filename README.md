@@ -116,6 +116,17 @@ python3 -m http.server 8000
 > `wrangler pages dev .` (neobligāti). Bez tā frontend darbojas, bet
 > apmaksas pieprasījumi neizdosies, kamēr nav servera vides.
 
+## Māla kartes punkti
+
+Sākumlapas karte izmanto Google Maps pamatkarti un vietnes stilā veidotu
+punktu pārklājumu. Punkti tiek lasīti no CSV faila
+[`data/latvijas_malu_testesanas_lokacijas_50.csv`](data/latvijas_malu_testesanas_lokacijas_50.csv).
+
+Lai pievienotu vai labotu punktus, atjauno CSV rindas ar kolonnām `Lat`,
+`Lng`, `Lokācija / pins`, `Novads/reģions`, `Prioritātes klase`,
+`Ģeoloģiskais pamatojums`, `Testēšanas mērķis`, `Piekļuves piezīme`,
+`Avota URL`, `Google Maps URL` un `Statuss`.
+
 ---
 
 ## Izvietošanas pārskats

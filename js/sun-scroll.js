@@ -1,7 +1,7 @@
 /**
  * Hero sun scroll rotation.
  *
- * The riso sun in the homepage hero rotates as the page scrolls.
+ * The homepage hero sun rotates as the page scrolls.
  * There is intentionally no fixed decorative sun elsewhere on the site.
  */
 
