@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ebKERAMIKA – Unikāli māla darbi no Latvijas</title>
+  <title>ebKeramika</title>
   <meta name="description" content="Ierobežota skaita keramikas darbi no Latvijas māla. Māla izcelsmes karte, glazēšanas stili un latviskas zīmes." />
   <meta property="og:title" content="ebKERAMIKA – Unikāli māla darbi no Latvijas" />
   <meta property="og:description" content="Ierobežota skaita keramika no Latvijas māla." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Badeen+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Badeen+Display&family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -18,7 +18,7 @@
 
   <header class="site-header">
     <div class="container">
-      <a class="brand overprint-text" data-text="ebKERAMIKA" href="index.html">ebKERAMIKA</a>
+      <a class="brand overprint-text" data-text="ebKERAMIKA" href="index.html">ebKeramika</a>
       <nav class="main-nav" aria-label="Galvenā navigācija">
         <a href="shop.html">Veikals</a>
         <a href="index.html#mala-karte">Karte</a>
@@ -37,7 +37,6 @@
           <div class="hero-symbol is-blue" id="heroSunSymbol">
             <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="110" cy="110" r="38" stroke="currentColor" stroke-width="6" />
-              <circle cx="110" cy="110" r="68" stroke="currentColor" stroke-width="4" />
               <g stroke="currentColor" stroke-width="7">
                 <path d="M110 8V50" />
                 <path d="M110 170V212" />
@@ -90,7 +89,16 @@
           </div>
 
           <div class="symbol-legend" aria-label="Latviskās zīmes kolekcijās">
-            <div class="legend-item"><span class="legend-mark">◇</span><span>Jumis</span></div>
+            <div class="legend-item">
+              <span class="legend-mark legend-mark-jumis" aria-hidden="true">
+                <svg viewBox="0 0 100 72" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 38L30 12L50 34L70 12L92 38" />
+                  <path d="M50 34L24 66" />
+                  <path d="M50 34L76 66" />
+                </svg>
+              </span>
+              <span>Jumis</span>
+            </div>
             <div class="legend-item"><span class="legend-mark">✚</span><span>Māras krusts</span></div>
             <div class="legend-item"><span class="legend-mark">△</span><span>Dievs</span></div>
             <div class="legend-item"><span class="legend-mark">✳</span><span>Pērkonkrusts</span></div>

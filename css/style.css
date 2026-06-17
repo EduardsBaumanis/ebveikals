@@ -17,7 +17,7 @@
   --danger: #b9351b;
 
   --font-head: "Badeen Display", system-ui;
-  --font-body: Inter, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Jaro", sans-serif;
 
   --space: 1rem;
   --radius: 0;
@@ -113,6 +113,13 @@ img { display: block; max-width: 100%; }
 
 .badeen-display-regular {
   font-family: "Badeen Display", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.jaro-riso-regular {
+  font-family: "Jaro", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
@@ -431,12 +438,37 @@ textarea:focus-visible,
 .legend-mark {
   display: inline-grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   color: var(--blue);
   font-family: var(--font-head);
   font-size: 2rem;
   line-height: 1;
+}
+
+.legend-mark svg {
+  width: 38px;
+  height: 34px;
+  overflow: visible;
+}
+
+.legend-mark svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 10;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.legend-mark svg circle {
+  fill: currentColor;
+}
+
+.legend-mark-maras-krusts svg,
+.legend-mark-dievs svg,
+.legend-mark-perkonkrusts svg {
+  width: 34px;
+  height: 34px;
 }
 
 .legend-item:nth-child(odd) .legend-mark { color: var(--clay); }
@@ -1247,7 +1279,7 @@ textarea {
   }
 
   .hero h1 em {
-    font-size: 4.8rem;
+    font-size: 3rem;
   }
 
   .product-grid {
